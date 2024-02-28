@@ -1,23 +1,17 @@
 ---
 title: | 
   ![](THA_Logo.png){width=1in}\linebreak
-  Mein Thema
+  My Topic
 subtitle: DVA-Seminar
-author: V. Nachname
+author: F. Lastname
 date: today
 date-format: DD.MM.YYYY
 bibliography: references.bib
 csl: ieee-with-url.csl
-crossref:
-  fig-title: Abb.         # (default is "Figure")
-  tbl-title: Tab.         # (default is "Table")      
-  fig-prefix: Abbildung   # (default is "Figure")
-  tbl-prefix: Tabelle     # (default is "Table")
-  eq-prefix: Gleichung    # (default is "Equation")
 format:
    pdf:
     toc: true
-    toc-title: Inhaltsverzeichnis
+    toc-title: Table of Contents
     number-sections: true
     colorlinks: true
     link-citations: true
@@ -49,6 +43,6 @@ format:
 
 \newpage
 
-# Literaturverzeichnis
+# References
 ::: {#refs}
 ::: 

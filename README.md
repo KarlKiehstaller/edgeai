@@ -1,46 +1,46 @@
 # Quarto THA
 
-Quarto THA für ansprechende .html Slides und automatischen LaTex report.
+Quarto THA for appealing .html slides and automatic LaTex report.
 
-- [Content: Der eigentliche Inhalt](content/content.qmd)
+- [Content: The actual content](content/content.qmd)
 - [Slides: .html slides](slides/slides.qmd)
 - [Report: .pdf report](report/report.qmd)
 
-![Titel Folie](docu/title_slide.png){width=50%}
+![Title slide](docu/title_slide.png){width=50%}
 
 ![Report](docu/report.png){width=50%}
 
 ## Quarto
-[Quarto](https://quarto.org/) ist in Open-Source-System für wissenschaftliches und technisches Publizieren:
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system:
 
-- Verfasse Inhalte mit Jupyter-Notebooks oder Markdown im bevorzugten Editor
-- Erstelle dynamische Inhalte mit Python, R, Julia und Observable
-- Veröffentliche reproduzierbare, qualitativ hochwertige Artikel, Präsentationen und mehr in HTML, PDF, MS Word oder ePub
-- Teile Wissen unternehmensweit durch Publikation auf Posit Connect, Confluence oder anderen Systemen
-- Nutze Pandoc-Markdown für das Schreiben, inklusive Gleichungen, Zitaten, Querverweisen, Abbildungspaneelen, Callouts und fortgeschrittenem Layout
+- Author using Jupyter notebooks or with plain text markdown in your favorite editor.
+- Create dynamic content with Python, R, Julia, and Observable.
+- Publish reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.
+- Share knowledge and insights organization-wide by publishing to Posit Connect, Confluence, or other publishing systems.
+- Write using Pandoc markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more.
 
 ## Quarto Installation
 
-Eine ausführliche Anleitung zur Installation auf allen gängigen Plattformen gibt es [hier](https://quarto.org/docs/get-started/).
+A detailed guide for installation on all common platforms is available [here](https://quarto.org/docs/get-started/).
 
-- Das Erstellen von Folien ist ohne weitere Software möglich. 
-- Zum Erstellen von LaTex Dokumenten muss eine Tex Version installiert sein, z.B. [TexLive](https://www.tug.org/texlive/).
+- Creating slides is possible without additional software.
+- To create LaTeX documents, a Tex version must be installed, for example [TexLive](https://www.tug.org/texlive/).
 
 ## Quarto THA Setup
-Git checkout mit:
+Git checkout:
 
 ```console
 git clone https://gitlab.informatik.hs-augsburg.de/mis18bh/quarto_tha
 ```
 
-[slides.qmd](slides/slides.qmd) und [report.qmd](report/report.qmd) binden die Inhalte aus [content.qmd](report/content.qmd) ein. Damit gemeinsame Ressourcen (images und references.bib) effizient genutzt werden können, müssen jeweils symbolische Verknüpfungen erstellt werden. 
+[slides.qmd](slides/slides.qmd) and [report.qmd](report/report.qmd) include content from [content.qmd](report/content.qmd). To efficiently use shared resources (images and references.bib), symbolic links must be created for each document.
 
-Auf Linux:
+On Linux:
 
 ```console
 bash ./setup.bash
 ```
 
-Auf Windows mit Rechtsklick auf `setup.bat` auf Ausführen als Administrator:
+On Windows, right-click on `setup.bat` and select Run as Administrator:
 
 ![Windows Setup](docu/windows.png){width=50%}

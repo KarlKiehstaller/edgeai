@@ -1,6 +1,6 @@
 ---
-title: Mein Thema
-author: V. Nachname
+title: My Topic
+author: F. Lastname
 date: today
 date-format: DD.MM.YYYY
 bibliography: references.bib
@@ -8,12 +8,6 @@ csl: nature.csl
 title-slide-attributes:
     data-background-image: media/image5.jpg
     data-background-size: stretch
-crossref:
-  fig-title: Abb.         # (default is "Figure")
-  tbl-title: Tab.         # (default is "Table")      
-  fig-prefix: Abbildung   # (default is "Figure")
-  tbl-prefix: Tabelle     # (default is "Table")
-  eq-prefix: Gleichung    # (default is "Equation")
 format:
   revealjs: 
     theme: [default, tha.scss]
@@ -41,6 +35,6 @@ format:
 
 {{< include ../content/content.qmd >}}
 
-## Literaturverzeichnis
+## References
 ::: {#refs}
 ::: 

@@ -1,77 +1,77 @@
-# Einleitung
+# Introduction
 
-Dieser Text ist auf der Folie sichtbar.
+This text is visible on the slide.
 
 ::: {.notes}
-Dieser Text erscheint nur in der PDF. Hier kann ein sehr langer Text stehen der den Inhalt der Folie genauer beschreibt. Oder einfach ein Blindtext, wie z.B. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+This text only appears in the PDF. Here, a very long text can stand that describes the content of the slide in more detail. Or just a placeholder text, for example: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 :::
 
-<!-- Hier steht ein Kommentar -->
+<!-- This is a comment -->
 
-## Ein Unterpunkt
+## A Subsection
 
-<!-- Eine Folie mit zwei Spalten -->
+<!-- A slide with two columns-->
 
-Eine Folie mit zwei Spalten. Im Bericht steht es nacheinander.
+A slide with two columns. The two columns appear after each other in the report.
 
 :::: {.columns}
 
 ::: {.column  width="49%"}
 
-- eine
-- unsortierte
-- Liste
+- one
+- unordered
+- list
 :::
 
 ::: {.column width="49%"}
-Hier steht ein Verweis auf @fig-Bild1.
+This is a reference to @fig-Bild1.
 
-![Beschriftung der Abbildung](images/falcon.png){#fig-Bild1 width=40%}
+![Caption of Figure](images/falcon.png){#fig-Bild1 width=40%}
 :::
 
 ::::
 
-# Ein neues Kapitel
+#  Another Chapter
 
 ::: {.incremental}
-- Eine
-- inkrementelle
-- Aufzählung
+- an
+- incremental
+- list
 :::
 
-Hier ist ein Zitat [@ipsum2010lorem].
+This is a citation [@ipsum2010lorem].
 
-## Ein Unterpunkt
+## A Subsection
 
-Hier ist eine Fußnote[^1].
+This is a footnote[^1].
 
-[^1]: Die Erklärung der Fußnote.
+[^1]: Remarks to the footnote.
 
-## Noch ein Unterpunkt
+## Another Subsection
 
-Eine neue Folie mit Überschrift und einer komplizierten Gleichung.
+A slide with a headline and a complicated equation.
 
 $$ \mathcal{L}\{f(t)\}=\int_{t=0}^{\infty}f(t)e^{-st}dt $${#eq-laplace}
 
-@eq-laplace sieht kompliziert aus.
+@eq-laplace looks complicated.
 
 ---
 
-Eine neue Folie ohne Überschriftmit wichtiger Information in einem Callout.
+A slide without a headline but important information in a callout.
 
 ::: {.callout-important}
-## Achtung
-Wichtige Information!
+## Attention
+Important information!
 :::
 
 ::: {.callout-tip}
-## Hinweis
-Ein Hinweis: <https://quarto.org/docs/authoring/callouts.html>
+## Hint
+A hint: <https://quarto.org/docs/authoring/callouts.html>
 :::
 
 ---
 
-Noch eine neue Folie ohne Überschrift dafür mit @tbl-default.
+Another  slide without a headline but a table instead @tbl-default.
 
 | Default | Left | Right | Center |
 |---------|:-----|------:|:------:|
@@ -79,16 +79,15 @@ Noch eine neue Folie ohne Überschrift dafür mit @tbl-default.
 | 123     | 123  |   123 |  123   |
 | 1       | 1    |     1 |   1    |
 
-: Eine Tabelle {#tbl-default}
+: A Table {#tbl-default}
 
 
 
-# Noch ein Kapitel {background-image="images/ameca.png"}
+# Another Chapter {background-image="images/ameca.png"}
 
-mit Hintergrundbild auf der Folie
+with a background on the slide only
 
-
-## Ein spannendes Video
+## An Exciting Video
 
 <!-- autoplay, start und mute über Youtube URL -->
 
