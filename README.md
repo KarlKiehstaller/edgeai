@@ -30,7 +30,7 @@ Eine ausführliche Anleitung zur Installation auf allen gängigen Plattformen gi
 Git checkout mit:
 
 ```console
-git clone https://gitlab.informatik.hs-augsburg.de/mis18bh/quarto_template
+git clone https://gitlab.informatik.hs-augsburg.de/mis18bh/quarto_tha
 ```
 
 [slides.qmd](slides/slides.qmd) und [report.qmd](report/report.qmd) binden die Inhalte aus [content.qmd](report/content.qmd) ein. Damit gemeinsame Ressourcen (images und references.bib) effizient genutzt werden können, müssen jeweils symbolische Verknüpfungen erstellt werden. 
@@ -41,6 +41,6 @@ Auf Linux:
 bash ./setup.bash
 ```
 
-Auf Windows mit Rechtsklick auf `setup.bat`:
+Auf Windows mit Rechtsklick auf `setup.bat` auf Ausführen als Administrator:
 
 ![Windows Setup](docu/windows.png){width=50%}
