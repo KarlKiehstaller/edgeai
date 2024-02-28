@@ -1,0 +1,151 @@
+/*-- scss:defaults --*/
+
+$presentation-heading-font: 'TWK Everett', serif;
+$mainFont: 'TWK Everett', serif;
+
+$tha-red: #FF0350;
+$tha-orange: #F49600;
+$tha-blue: #6784A5;
+
+$lt1: #FF0350;
+$lt2: #F2F2F2;
+$accent1:  #FF0350;
+$accent2:  #FFC700;
+$accent3:  #585858;
+$accent4:  #808080;
+$accent5:  #00C341;
+$accent6:  #CCCCCC;
+$hlink:    #FF0350;
+$folHlink: #595959;
+
+$footer-bg: $lt2;
+$link-color: $tha-red;
+$presentation-title-slide-text-align: left;
+
+section.level2 {
+    top: 0px !important;
+    height: 100%;
+}
+
+section.level3 {
+    top: 0px !important;
+    height: 100%;
+}
+
+section.level4 {
+    top: 0px !important;
+    height: 100%;
+}
+
+.title {
+    text-decoration-color: $tha-red;
+}
+
+.quarto-title-author-name {
+    color: $tha-red !important;
+}
+
+.date {
+    color: $tha-red !important;
+}
+
+.reveal .footer {
+    color: $tha-red !important;
+}
+
+h1 {
+    color: $tha-red !important;
+    text-transform: uppercase !important;
+    font-size: 2.2em !important;
+}
+
+h2 {
+    color: $tha-red !important;
+    text-transform: uppercase !important;
+    font-size: 2.2em !important;
+}
+
+h3 {
+    color: $tha-red !important;
+    text-transform: uppercase !important;
+    font-size: 2.2em !important;
+}
+
+h4 {
+    color: $tha-red !important;
+    text-transform: uppercase !important;
+    font-size: 2.2em !important;
+}
+
+.reveal ul {
+    list-style-image: url(/media/image2.svg);
+}
+
+.reveal ul ul {
+    list-style-type: "- "  !important;
+    padding-inline-start: 1ch;
+    list-style-image: none;
+}
+
+.reveal .slide-logo {
+    top: 4% !important;
+    right: 4% !important;
+    max-height: 8% !important;
+  }
+  
+  .reveal .footer {
+    bottom: 8px !important;
+    width: 95% !important;
+    margin: 0 auto;
+    text-align: center !important;
+    font-size: 0.5em !important;
+    z-index: 2;
+  }
+
+  
+  .reveal .slide .footer {
+    display: none;
+  }
+  
+  .reveal .slide-number {
+    top: auto !important;
+    bottom: 6px !important;
+    right: 4% !important;
+    font-size: 0.5em !important;
+    font-family: 'TWK Everett' !important;
+    color: #FF0045 !important;
+    background-color: transparent;
+  }
+
+.caption {
+    text-align: center;
+}
+
+
+.reveal.smaller .callout.callout-style-default div.callout-body {
+    font-size: 20px !important;
+}
+
+
+.table-striped.header {
+    color: $tha-red;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f2f2f2; // Choose your own color here
+}
+
+// /*-- scss:mixins --*/
+
+/*-- scss:rules --*/
+@font-face {
+    font-family: 'TWK Everett';
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+         url(/font/TWKEverett-Regular.otf) format('opentype');
+}
+
+
+  

@@ -1,0 +1,99 @@
+# Einleitung
+
+Dieser Text ist auf der Folie sichtbar.
+
+::: {.notes}
+Dieser Text erscheint nur in der PDF. Hier kann ein sehr langer Text stehen der den Inhalt der Folie genauer beschreibt. Oder einfach ein Blindtext, wie z.B. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+:::
+
+<!-- Hier steht ein Kommentar -->
+
+## Ein Unterpunkt
+
+<!-- Eine Folie mit zwei Spalten -->
+
+Eine Folie mit zwei Spalten. Im Bericht steht es nacheinander.
+
+:::: {.columns}
+
+::: {.column  width="49%"}
+
+- eine
+- unsortierte
+- Liste
+:::
+
+::: {.column width="49%"}
+Hier steht ein Verweis auf @fig-Bild1.
+
+![Beschriftung der Abbildung](images/falcon.png){#fig-Bild1 width=40%}
+:::
+
+::::
+
+# Ein neues Kapitel
+
+::: {.incremental}
+- Eine
+- inkrementelle
+- Aufzählung
+:::
+
+Hier ist ein Zitat [@ipsum2010lorem].
+
+## Ein Unterpunkt
+
+Hier ist eine Fußnote[^1].
+
+[^1]: Die Erklärung der Fußnote.
+
+## Noch ein Unterpunkt
+
+Eine neue Folie mit Überschrift und einer komplizierten Gleichung.
+
+$$ \mathcal{L}\{f(t)\}=\int_{t=0}^{\infty}f(t)e^{-st}dt $${#eq-laplace}
+
+@eq-laplace sieht kompliziert aus.
+
+---
+
+Eine neue Folie ohne Überschriftmit wichtiger Information in einem Callout.
+
+::: {.callout-important}
+## Achtung
+Wichtige Information!
+:::
+
+::: {.callout-tip}
+## Hinweis
+Ein Hinweis: <https://quarto.org/docs/authoring/callouts.html>
+:::
+
+---
+
+Noch eine neue Folie ohne Überschrift dafür mit @tbl-default.
+
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Eine Tabelle {#tbl-default}
+
+
+
+# Noch ein Kapitel {background-image="images/ameca.png"}
+
+mit Hintergrundbild auf der Folie
+
+
+## Ein spannendes Video
+
+<!-- autoplay, start und mute über Youtube URL -->
+
+{{< video src="https://www.youtube.com/embed/wo9vZccmqwc"
+    width="100%" 
+    height="100%" 
+    start=10
+>}}

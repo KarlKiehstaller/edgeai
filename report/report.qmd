@@ -1,0 +1,54 @@
+---
+title: | 
+  ![](THA_Logo.png){width=1in}\linebreak
+  Mein Thema
+subtitle: DVA-Seminar
+author: V. Nachname
+date: today
+date-format: DD.MM.YYYY
+bibliography: references.bib
+csl: ieee-with-url.csl
+crossref:
+  fig-title: Abb.         # (default is "Figure")
+  tbl-title: Tab.         # (default is "Table")      
+  fig-prefix: Abbildung   # (default is "Figure")
+  tbl-prefix: Tabelle     # (default is "Table")
+  eq-prefix: Gleichung    # (default is "Equation")
+format:
+   pdf:
+    toc: true
+    toc-title: Inhaltsverzeichnis
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    include-in-header: 
+      text: |
+        \usepackage{svg}
+        \usepackage{amsmath}
+        \usepackage{floatrow}
+        \floatplacement{figure}{!h}
+        \floatplacement{table}{!h}
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhead[L]{ {{< meta title >}} }
+        \fancyhead[C]{}
+        \fancyhead[R]{ {{< meta subtitle >}} }
+        \fancyfoot[C]{}    
+        \fancyfoot[R]{\thepage}  
+        \renewcommand{\rule}[2]{\vspace{-1.1cm}}
+        \let\oldimg\includegraphics
+        \renewcommand{\includegraphics}[2][]{\oldimg[height=5cm]{#2}} 
+        \newcommand{\tinyimg}[1]{{\oldimg[height=0.5cm]{#1}}}
+        \fancyfoot[L]{\tinyimg{THA_Logo.png}}
+
+---
+
+\newpage
+
+{{< include ../content/content.qmd >}}
+
+\newpage
+
+# Literaturverzeichnis
+::: {#refs}
+::: 

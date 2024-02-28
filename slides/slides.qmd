@@ -1,0 +1,46 @@
+---
+title: Mein Thema
+author: V. Nachname
+date: today
+date-format: DD.MM.YYYY
+bibliography: references.bib
+csl: nature.csl
+title-slide-attributes:
+    data-background-image: media/image5.jpg
+    data-background-size: stretch
+crossref:
+  fig-title: Abb.         # (default is "Figure")
+  tbl-title: Tab.         # (default is "Table")      
+  fig-prefix: Abbildung   # (default is "Figure")
+  tbl-prefix: Tabelle     # (default is "Table")
+  eq-prefix: Gleichung    # (default is "Equation")
+format:
+  revealjs: 
+    theme: [default, tha.scss]
+    logo: media/image8.png
+    footer: "{{< meta title >}} - {{< meta author >}}  <span style='float: right; '>{{< meta date >}}  &#160;  |  &#160; &#160; &#160; </span>"
+    smaller: true
+    # scrollable: true
+
+    slide-number: c
+    slide-level: 4
+
+    menu: true
+    chalkboard: 
+      buttons: true
+
+    transition: slide
+    background-transition: zoom
+    autoPlayMedia: true
+
+    cap-location: bottom
+    callout-icon: false
+    margin: 0.08
+    width: 1280
+---
+
+{{< include ../content/content.qmd >}}
+
+## Literaturverzeichnis
+::: {#refs}
+::: 
