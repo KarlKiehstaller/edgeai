@@ -1,8 +1,8 @@
-./report/references.bib
-./report/images
-./slides/references.bib
-./slides/images
-./slides/slides_files/*
-./content/content_files/*
+report/references.bib
+report/images
+slides/references.bib
+slides/images
+slides/slides_files/*
+content/content_files/*
 *.pdf
 *.html
