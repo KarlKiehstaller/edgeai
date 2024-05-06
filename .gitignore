@@ -2,6 +2,8 @@ report/references.bib
 report/images
 slides/references.bib
 slides/images
+script/references.bib
+script/images
 slides/slides_files/*
 content/content_files/*
 *.pdf

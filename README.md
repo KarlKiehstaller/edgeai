@@ -5,10 +5,13 @@ Quarto THA for appealing .html slides and automatic LaTex report.
 - [Content: The actual content](content/content.qmd)
 - [Slides: .html slides](slides/slides.qmd)
 - [Report: .pdf report](report/report.qmd)
+- [Script: .html script](script/script.qmd)
 
 ![Title slide](docu/title_slide.png){width=50%}
 
 ![Report](docu/report.png){width=50%}
+
+This Quarto project is configured in such a way that you can generate .html slides, a LaTeX report or a an .html script based on a single `content.qmd` file. If you want to create either the slides, the report or the script just open the `slides.qmd` oder `report.qmd`, respectively, and build the document in your IDE.
 
 ## Quarto
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system:

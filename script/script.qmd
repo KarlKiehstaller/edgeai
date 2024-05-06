@@ -1,0 +1,31 @@
+---
+title: | 
+  ![](THA_Logo.png){width=1in}\linebreak
+  My Topic
+subtitle: DVA-Seminar
+author: F. Lastname
+date: today
+date-format: DD.MM.YYYY
+bibliography: references.bib
+csl: ieee-with-url.csl
+format:
+    html: 
+      theme: [default, tha.scss]
+      toc: true
+      toc-depth: 5
+      toc-expand: 2
+      toc-title: Inhalt
+      number-sections: true
+      number-depth: 2
+      reference-location: section
+      embed-resources: true
+
+---
+
+{{< include ../content/content.qmd >}}
+
+
+# References
+::: {#refs}
+::: 
+
