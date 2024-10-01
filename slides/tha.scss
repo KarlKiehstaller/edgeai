@@ -25,81 +25,56 @@ $presentation-h2-font-size: 1.6em;
 $presentation-h3-font-size: 1.6em;
 $presentation-h4-font-size: 1.6em;
 
-section.level2 {
-    top: 0px !important;
+section.level1, section.level2, section.level3, section.level4 {
+    top: 5.1% !important;
+    left: 4.2% !important;
     height: 100%;
 }
 
-section.level3 {
-    top: 0px !important;
-    height: 100%;
+.quarto-title-block {
+    top: 0% !important;
 }
 
-section.level4 {
-    top: 0px !important;
-    height: 100%;
-}
-
-section.level5 {
-    top: 0px !important;
-    height: 100%;
-}
-
-section.level6 {
-    top: 0px !important;
-    height: 100%;
-}
-
-.title {
-    text-decoration-color: $tha-red;
-}
-
-.quarto-title-author-name {
+em {
     color: $tha-red !important;
+ }
+
+#title-slide .title {
+color: $tha-red !important;
 }
 
-.date {
-    color: $tha-red !important;
+#title-slide .quarto-title-authors {
+color: $tha-red !important;
+}
+
+#title-slide .date {
+color: $tha-red !important; 
 }
 
 .reveal .footer {
     color: $tha-red !important;
+    font-size: 8.5pt;
+    bottom: 4.8% !important;
+    left: 17% !important;
+    width: 77% !important;
+    text-align: left !important;   
+    
 }
 
-h1 {
+.reveal .slide-number {
     color: $tha-red !important;
-    text-transform: uppercase !important;
-    font-size: 2em !important;
+    font-size: 17pt !important;
+    top: auto !important;
+    bottom: 4.4% !important;
+    right: 4.2% !important;
 }
 
-h2 {
-    color: $tha-red !important;
-    text-transform: uppercase !important;
-    font-size: 2em !important;
-}
 
-h3 {
+h1, h2, h3, h4 {
     color: $tha-red !important;
     text-transform: uppercase !important;
-    font-size: 2em !important;
-}
-
-h4 {
-    color: $tha-red !important;
-    text-transform: uppercase !important;
-    font-size: 2em !important;
-}
-
-h5 {
-    color: $tha-red !important;
-    text-transform: uppercase !important;
-    font-size: 2em !important;
-}
-
-h6 {
-    color: $tha-red !important;
-    text-transform: uppercase !important;
-    font-size: 2em !important;
+    font-size: 24pt !important;
+    font-weight: bold;    
 }
 
 .reveal ul {
@@ -117,33 +92,14 @@ h6 {
 }
 
 .reveal .slide-logo {
-    top: 2% !important;
-    right: 2% !important;
-    max-height: 8% !important;
+    bottom: 3% !important;
+    left: 3.7% !important;
+    max-height: 7% !important;
   }
   
-  .reveal .footer {
-    bottom: 8px !important;
-    width: 95% !important;
-    margin: 0 auto;
-    text-align: center !important;
-    font-size: 0.9em !important;
-    z-index: 2;
-  }
-
   
   .reveal .slide .footer {
     display: none;
-  }
-  
-  .reveal .slide-number {
-    top: auto !important;
-    bottom: 6px !important;
-    right: 4% !important;
-    font-size: 0.9em !important;
-    font-family: 'TWK Everett' !important;
-    color: #FF0045 !important;
-    background-color: transparent;
   }
 
 .caption {
