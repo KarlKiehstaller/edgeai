@@ -1,12 +1,12 @@
 ---
-title: My Topic
-author: F. Lastname
+title: Edge-AI
+author: Karl Kiehstaller, Sebastian Behrendt, Tobias Holmer, Philipp Merunka
 date: today
 date-format: DD.MM.YYYY
 bibliography: references.bib
 csl: nature.csl
 title-slide-attributes:
-    data-background-image: media/image5.jpg
+    data-background-image: media/etheinfuehrung.png
     data-background-size: stretch
 format:
   revealjs: 
@@ -15,7 +15,7 @@ format:
     footer: "{{< meta title >}} - {{< meta author >}}  <span style='float: right; '>{{< meta date >}}  &#160;  |  &#160; &#160; &#160; </span>"
     smaller: true
     # scrollable: true
-
+    incremental: true
     slide-number: c
     slide-level: 4
 
@@ -35,6 +35,3 @@ format:
 
 {{< include ../content/content.qmd >}}
 
-## References
-::: {#refs}
-::: 
