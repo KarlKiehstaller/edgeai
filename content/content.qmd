@@ -16,48 +16,55 @@
 
 # Was ist Edge-AI?
 
-:::{.incremental}
-
-- **Definition**
-    - Einsatz künstlicher Intelligenz lokal auf Endgeräten
 
 
-
-- **Beispiele zur Anwendung**
-    - Sensorendaten verarbeiten
-    - Kameras und Fahrzeuge
+![Cloud AI](./images/cloud.png){fig-align="left" width="40%" height="30%" style="margin-right: 200px; margin-left: 20px"}
+![Cloud AI](./images/data.png){fig-align="left" width="40%" height="30%"}
 
 
 
-- **Kernidee**
-    - Daten werden dort verarbeitet, wo sie Entstehen
 
 
 
-- **Vorteile**
-    - Sehr geringe Latenzen (Echtzeit)
-    - Lokale ausführung (Offline)
-    - Sparen von Bandbreite
-
-:::
-
-# Integration des Neuronalen Netzes
-
-:::{.incremental}
-
-- **Vorgehensweise**
 
 
-    - Vorbereiten des Neuronalen Netzes für C-Code mittels X-Cube AI
+# STM32N6570-DK
+
+<table style="margin-top: 50px">
+  <tr>
+    <td style="width: 50%; vertical-align: center;">
+      <img src="./images/stm32n6.png" alt="Cloud AI" style="width: 100%;">
+    </td>
+    <td style="width: 50%; vertical-align: top;">
+      <ul>
+        <li><strong>NPU</strong></li>
+        <br>
+        <li><strong>ARM CORTEX M55</strong></li>
+        <br>
+        <li><strong>Camera Module</strong></li>
+        <br>
+        <li><strong>1 GBit Flash Memory</strong></li>
+        <br>
+        <li><strong>LCD Display</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
-    - Konfiguration der Peripherie <span class="fragment">→ Eingabe ins NN</span> <span class="fragment">→ Verarbeiten und Anzeigen des Outputs</span>
-
-    
+# Neural Processing Unit
 
 
+![](./images/npu.png){fig-align="center heigth: 35%"}
 
-:::
+
+
+# Aufbaue der Software
+
+
+![](./images/diagramm.svg){fig-align="left" width="80%" }
+
+
 
 # Initialisierung der Peripherie und Pipeline
 

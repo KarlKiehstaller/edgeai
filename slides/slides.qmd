@@ -6,8 +6,8 @@ date-format: DD.MM.YYYY
 bibliography: references.bib
 csl: nature.csl
 title-slide-attributes:
-    data-background-image: media/etheinfuehrung.png
-    data-background-size: stretch
+    data-background-image: media/titelfolie.jpeg
+    data-background-size: auto
 format:
   revealjs: 
     theme: [default, tha.scss]
