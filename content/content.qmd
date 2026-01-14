@@ -1,28 +1,19 @@
 
-# Gliederung
-
-1. Was ist Edge-AI?
-2. Ziel des Projekts
-3. Edge-Device
-4. Neural Processing Unit
-5. Aufbau der Software
-6. Getestete Modelle
-7. Integration des Netzes
-8. Probleme
-9. Ergebnis 
-10. Anwendung, Ausblick
-
-
-
 # Was ist Edge-AI?
 
 ![Cloud AI](./images/cloud.png){fig-align="left" width="40%" height="30%" style="margin-right: 200px; margin-left: 20px"}
 ![Cloud AI](./images/data.png){fig-align="left" width="40%" height="30%"}
 
 
-# Ziel des Projektes
+# Projektziele
 
-**Visual-Odometry-System auf dem STM32N6 Edge-Prozessor** mit quantisiertem neuronalen Netz für Echtzeit-Bewegungsschätzung
+::: {.callout-tip}
+## Visual-Odometry-System auf dem STM32N6 Edge-Prozessor
+- Eingebettetes System
+- Echtzeit-Bewegungsschätzung mit neuronalen Netz
+
+:::
+
 
 ::: {.columns}
 :::: {.column width="50%"}
@@ -42,44 +33,34 @@
 
 # Edge-Device: STM32N6570-DK
 
-<table style="margin-top: 50px">
-  <tr>
-    <td style="width: 50%; vertical-align: center;">
-      <img src="./images/stm32n6.png" alt="Cloud AI" style="width: 100%;">
-    </td>
-    <td style="width: 50%; vertical-align: top;">
-      <ul>
-        <li><strong>NPU</strong></li>
-        <br>
-        <li><strong>ARM CORTEX M55</strong></li>
-        <br>
-        <li><strong>Camera Module</strong></li>
-        <br>
-        <li><strong>1 GBit Flash Memory</strong></li>
-        <br>
-        <li><strong>LCD Display</strong></li>
-      </ul>
-    </td>
-  </tr>
-</table>
 
 
-# Neural Processing Unit
+- ARM Cortex-M55
+- embedded NPU
+- Camera Module
+- 1 GBit external flash memory
+- LCD display
 
+![Eval Board](images/stm32n6.png)
+
+
+## Neural Processing Unit
 
 ![Cloud AI](./images/npu.png){fig-align="center" width="40%" height="30%" style="margin-right: 50px; margin-left: 20px"}
 ![Cloud AI](./images/npuvscpuklein.png){fig-align="left" width="50%" height="30%" style="margin-top: 100px"}
 
+<!-- Mehr Infos? -->
 
-# Aufbau der Software
+# Software
 
 ![](./images/diagramm.svg){fig-align="left" width="80%" }
 
+<!-- Diagram unverständlich -->
 
-# Getestete Modelle
+## Getestete Modelle
 
 ::: {.columns}
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 *Superpoint*
 
 - Feature-Detektion und -Beschreibung anhand von Bildern
@@ -88,34 +69,36 @@
 
 - **Ausgang**: Keypointkandidaten + ID des Keypoints
 
-- Positionsbestimmung muss zusätzlich implementiert werden.
+::: {.callout-important .fragment}
+### Positionsbestimmung muss zusätzlich implementiert werden
+:::
 
 ::::
 
-:::: {.column width="50%"}
+:::: {.column width="40%"}
 ![Keypoint-Detection](./images/keypoint.png){width="75%"}
 ::::
 
 :::
 
-::: {.columns}
-:::: {.column width="50%"}
+::: {.columns .fragment}
+:::: {.column width="60%"}
 *Dronet*
 
-- Steuerunge eines mobilen Fahrzeuges anhand von Kamerabildern
-- Eingang: 200x200 Graustufenbild
-- Ausgang: Lenkwinkel und Kollisionswahrscheinlichkeit 
+- Steuerung eines Fahrzeuges anhand von Kamerabildern
+- **Eingang**: 200x200 Graustufenbild
+- **Ausgang**: Lenkwinkel und Kollisionswahrscheinlichkeit 
 
 ::::
 
-:::: {.column width="50%"}
+:::: {.column width="40%"}
 ![Dronet](./images/Dronet.png){width="75%"}
 
 ::::
 :::
 
 
-# Quantisierung
+## Quantisierung
 
 :::{.columns}
 
@@ -126,19 +109,27 @@
 
 :::: {.column width="50%"}
 - Quantisierung wandelt Gleitkommazahlen (Float32) in Ganzzahlen (INT8) um, damit das Netz schneller und speichersparender wird.
+
+::: {.fragment}
 - Grober Ablauf:
     1. **Quantization**: Gewichte/Aktivierungen werden mithilfe von Skalierungsparametern (Scale/Zero-Point) gerundet.
     2. **Execution:** Die Inferenz wird epochenweise mit den gerundeten Werten berechnet.
     3. **Dequantization:** Die Ergebnisse werden mithilfe derselben Skalierungsparameter wieder in Gleitkommawerte zurückgerechnet.
+
+:::
+
 ::::
 
 :::
 
-# Dronet V3 Quantisierung
+### Dronet V3 Quantisierung
 
 ![ST Edge AI Developer Cloud](./images/edge_ai_software.png)
 
-## Dronet V3 Quantisierung
+### Dronet V3 Quantisierung {.unnumbered .unlisted}
+
+<!-- Folie überarbeiten! -->
+
 
 :::{.columns}
 
@@ -162,20 +153,25 @@
 
 :::
 
+# Implementierung
 
-# Probleme
+![](./images/ablauf.png){fig-align="center"}
 
-- **Modellarchitektur**: NPU-inkompatible Operationen → CPU-Fallback
+::: {.callout-important .fragment}
+## Herausforderungen
+- *Modellarchitektur* NPU-inkompatible Operationen → CPU-Fallback
+- *Begrenzte Ressourcen* Wenig Online-Dokumentation für STM32N6
+- *Hardware* Kamera/Display-Ansteuerung, Flashen, Speicherarchitektur
+- *Software* Toolchain-Konfiguration, Datenpipeline-Stabilität
+:::
 
-- **Begrenzte Ressourcen**: Wenig Online-Dokumentation für STM32N6
+# Evaluierung
 
-- **Hardware**: Kamera/Display-Ansteuerung, Flashen, Speicherarchitektur
+![](./images/STM32N6_Inference.mp4){fig-align="center" width=70%}
 
-- **Software**: Toolchain-Konfiguration, Datenpipeline-Stabilität
+# Evaluierung {.unnumbered .unlisted}
 
-# Ergebnis
-
-*Quantisierungs-Ergebnisse: Original vs Quantisiert*
+*Vergleich: Original vs Quantisiert*
 
 
 | Metrik | Speicherbedarf | CPU | NPU | Inferenz | Steering | Collision |
@@ -184,27 +180,26 @@
 | **Quantisiert** | 707 kB | 8.3% | 91.7% | 1.648 ms | 98.1% | 97.0% |
 
 
-**Ergebnisse:**
+::: {.callout-tip .fragment}
+## Ergebnisse
 
-- **Speicher**: 46% Reduktion (13098 → 7098 kB)
+- **geringer Speicherdarf**: 46% Reduktion 
 
-- **Inferenzzeit**: 1.27fps → 607 fps (-99.79%)
+- **kürzere Inferenzzeit**: 1.27fps → 607 fps 
 
-- **CPU → NPU Shift**: 100% → 8.3% CPU, 0% → 91.7% NPU
+- **hohe Genauigkeit**: Steering -1.9%, Collision -3.0%
 
-- **Genauigkeit**: Steering -1.9%, Collision -3.0%
+- **geringere CPU Auslastung**
 
-## Video Inferenz
-
-{{< video ./images/STM32N6_Inference.mp4>}}
-
+:::
 
 
-# Anwendung, Ausblick
+
+# Ausblick
 
 :::{.columns}
 
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 
 *Einsatzgebiete*
 
@@ -217,15 +212,23 @@
 4. **Industrierobotik**: Präzise Bewegungssteuerung
 
 
+::: {.fragment}
+
 *Zukünftige Optimierungen*
 
 1. Multi-Sensor-Fusion (IMU + Kamera)
 
 2. Testen weiterer Modelle
 
+:::
+
+::: {.callout-note .fragment}
+## Gibt es noch Fragen?
+:::
+
 ::::
 
-:::: {.column width="50%"}
+:::: {.column width="40%"}
 ![Autonomes Fahren](./images/Autonomes-Fahren.webp){width="75%"}
 
 ![Autonomer Industrieroboter](./images/intustrieroboter.webp){width="75%"}
@@ -233,7 +236,6 @@
 ::::
 :::
 
-# Gibt es noch Fragen?
 
 
 
