@@ -2,34 +2,45 @@
 # Gliederung
 
 1. Was ist Edge-AI?
-2. Was ist ein neuronales Netz?
-3. Ziel des Projekts
-4. Edge-Device
-5. Neural Processing Unit
-6. Aufbau der Software
+2. Ziel des Projekts
+3. Edge-Device
+4. Neural Processing Unit
+5. Aufbau der Software
+6. Getestete Modelle
 7. Integration des Netzes
-6. Probleme
-7. Ergebnis 
-8. Anwendung, Ausblick
-
+8. Probleme
+9. Ergebnis 
+10. Anwendung, Ausblick
 
 
 
 # Was ist Edge-AI?
 
-
-
 ![Cloud AI](./images/cloud.png){fig-align="left" width="40%" height="30%" style="margin-right: 200px; margin-left: 20px"}
 ![Cloud AI](./images/data.png){fig-align="left" width="40%" height="30%"}
-
-# Was ist ein Neuronales Netz?
 
 
 # Ziel des Projektes
 
+**Visual-Odometry-System auf dem STM32N6 Edge-Prozessor** mit quantisiertem neuronalen Netz für Echtzeit-Bewegungsschätzung
+
+::: {.columns}
+:::: {.column width="50%"}
+**Bewertungskriterien**
+
+- Genauigkeit des optimierten Neuronalen Netzes
+
+- Frames per Second (FPS) bzw. Inferenzzeit
+
+- Speicherverbrauch
+::::
+:::: {.column width="50%"}
+![STM32N6](./images/stm32n6_nn.png){width="75%"}
+::::
+:::
 
 
-# STM32N6570-DK
+# Edge-Device: STM32N6570-DK
 
 <table style="margin-top: 50px">
   <tr>
@@ -56,7 +67,6 @@
 # Neural Processing Unit
 
 
-
 ![Cloud AI](./images/npu.png){fig-align="center" width="40%" height="30%" style="margin-right: 50px; margin-left: 20px"}
 ![Cloud AI](./images/npuvscpuklein.png){fig-align="left" width="50%" height="30%" style="margin-top: 100px"}
 
@@ -65,18 +75,25 @@
 
 ![](./images/diagramm.svg){fig-align="left" width="80%" }
 
+
 # Getestete Modelle
 
 ::: {.columns}
 :::: {.column width="50%"}
 *Superpoint*
 
--> Feature detection nimmt bereits einen Großen Teil der Prozessorleistung auf
--> Positionsbestimmung würde dann zusätzlich noch Prozessorleistung benötigen
+- Feature-Detektion und -Beschreibung anhand von Bildern
+
+- **Eingang**: 480 × 640 Graustufenbild
+
+- **Ausgang**: Keypointkandidaten + ID des Keypoints
+
+- Positionsbestimmung muss zusätzlich implementiert werden.
+
 ::::
 
 :::: {.column width="50%"}
-![Keypoint-Detection](./images/keypoint.png)
+![Keypoint-Detection](./images/keypoint.png){width="75%"}
 ::::
 
 :::
@@ -92,12 +109,10 @@
 ::::
 
 :::: {.column width="50%"}
-![Dronet](./images/Dronet.png)
+![Dronet](./images/Dronet.png){width="75%"}
 
 ::::
 :::
-
-*Wir haben uns für das Dronet entschieden*
 
 
 # Quantisierung
@@ -123,7 +138,7 @@
 
 ![ST Edge AI Developer Cloud](./images/edge_ai_software.png)
 
-# Dronet V3 Quantisierung
+## Dronet V3 Quantisierung
 
 :::{.columns}
 
@@ -217,6 +232,8 @@
 
 ::::
 :::
+
+# Gibt es noch Fragen?
 
 
 
