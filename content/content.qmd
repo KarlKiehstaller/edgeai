@@ -1,14 +1,15 @@
 
-
 # Gliederung
 
 1. Was ist Edge-AI?
-2. Was ist ein neuronales Netz
+2. Was ist ein neuronales Netz?
 3. Ziel des Projekts
-4. Neuronales Netz
-5. Integration des Netzes
-6. Performance 
-7. Probleme
+4. Edge-Device
+5. Neural Processing Unit
+6. Aufbau der Software
+7. Integration des Netzes
+6. Probleme
+7. Ergebnis 
 8. Anwendung, Ausblick
 
 
@@ -21,10 +22,10 @@
 ![Cloud AI](./images/cloud.png){fig-align="left" width="40%" height="30%" style="margin-right: 200px; margin-left: 20px"}
 ![Cloud AI](./images/data.png){fig-align="left" width="40%" height="30%"}
 
+# Was ist ein Neuronales Netz?
 
 
-
-
+# Ziel des Projektes
 
 
 
@@ -60,11 +61,166 @@
 ![Cloud AI](./images/npuvscpuklein.png){fig-align="left" width="50%" height="30%" style="margin-top: 100px"}
 
 
-
 # Aufbau der Software
 
-
 ![](./images/diagramm.svg){fig-align="left" width="80%" }
+
+# Getestete Modelle
+
+::: {.columns}
+:::: {.column width="50%"}
+*Superpoint*
+
+-> Feature detection nimmt bereits einen Großen Teil der Prozessorleistung auf
+-> Positionsbestimmung würde dann zusätzlich noch Prozessorleistung benötigen
+::::
+
+:::: {.column width="50%"}
+![Keypoint-Detection](./images/keypoint.png)
+::::
+
+:::
+
+::: {.columns}
+:::: {.column width="50%"}
+*Dronet*
+
+- Steuerunge eines mobilen Fahrzeuges anhand von Kamerabildern
+- Eingang: 200x200 Graustufenbild
+- Ausgang: Lenkwinkel und Kollisionswahrscheinlichkeit 
+
+::::
+
+:::: {.column width="50%"}
+![Dronet](./images/Dronet.png)
+
+::::
+:::
+
+*Wir haben uns für das Dronet entschieden*
+
+
+# Quantisierung
+
+:::{.columns}
+
+:::: {.column width="50%"}
+![Quantisierung eines Netzes](./images/quantisierung.png)
+
+::::
+
+:::: {.column width="50%"}
+- Quantisierung wandelt Gleitkommazahlen (Float32) in Ganzzahlen (INT8) um, damit das Netz schneller und speichersparender wird.
+- Grober Ablauf:
+    1. **Quantization**: Gewichte/Aktivierungen werden mithilfe von Skalierungsparametern (Scale/Zero-Point) gerundet.
+    2. **Execution:** Die Inferenz wird epochenweise mit den gerundeten Werten berechnet.
+    3. **Dequantization:** Die Ergebnisse werden mithilfe derselben Skalierungsparameter wieder in Gleitkommawerte zurückgerechnet.
+::::
+
+:::
+
+# Dronet V3 Quantisierung
+
+![ST Edge AI Developer Cloud](./images/edge_ai_software.png)
+
+# Dronet V3 Quantisierung
+
+:::{.columns}
+
+:::: {.column width="50%"}
+- Bei inkompatiblen Modellarchitekturen sind eigene Anpassungen nötig, in etwa durch das Ersetzen oder Umstrukturieren verschiedener Layer oder Operationen.
+
+- Auch bei Dronet V3 war dies nötig.
+::::
+
+:::: {.column width="50%"}
+**Umsetzung**:
+
+- Umwandlung des vortrainierten Modells in das .tflite-Format.
+
+- Manuelle Anpassung der Eingabe/Ausgabe-Architektur, da diese standardmäßig inkompatible Operatoren beinhalteten.
+
+- Post-Training-Quantization (PTQ) des angepassten Modells mit der LiteRT-Bibliothek.
+
+- Validierung und Analyse des quantisierten Modells mit der STM X-Cube-AI Toolchain.
+::::
+
+:::
+
+
+# Probleme
+
+- **Modellarchitektur**: NPU-inkompatible Operationen → CPU-Fallback
+
+- **Begrenzte Ressourcen**: Wenig Online-Dokumentation für STM32N6
+
+- **Hardware**: Kamera/Display-Ansteuerung, Flashen, Speicherarchitektur
+
+- **Software**: Toolchain-Konfiguration, Datenpipeline-Stabilität
+
+# Ergebnis
+
+*Quantisierungs-Ergebnisse: Original vs Quantisiert*
+
+
+| Metrik | Speicherbedarf | CPU | NPU | Inferenz | Steering | Collision |
+|--------|----------------|-----|-----|----------|----------|-----------|
+| **Original** | 1309 kB | 100% | 0% | 785.6 ms | 100% | 100% |
+| **Quantisiert** | 707 kB | 8.3% | 91.7% | 1.648 ms | 98.1% | 97.0% |
+
+
+**Ergebnisse:**
+
+- **Speicher**: 46% Reduktion (13098 → 7098 kB)
+
+- **Inferenzzeit**: 1.27fps → 607 fps (-99.79%)
+
+- **CPU → NPU Shift**: 100% → 8.3% CPU, 0% → 91.7% NPU
+
+- **Genauigkeit**: Steering -1.9%, Collision -3.0%
+
+## Video Inferenz
+
+{{< video ./images/STM32N6_Inference.mp4>}}
+
+
+
+# Anwendung, Ausblick
+
+:::{.columns}
+
+:::: {.column width="50%"}
+
+*Einsatzgebiete*
+
+1. **Autonome Fahrzeuge**: Echtzeit-Navigation ohne GPS
+
+2. **Mobile Roboter**: Indoor-Navigation in GPS-freien Umgebungen
+
+3. **Drohnen**: Visuelle Positionierung und Hindernisvermeidung
+
+4. **Industrierobotik**: Präzise Bewegungssteuerung
+
+
+*Zukünftige Optimierungen*
+
+1. Multi-Sensor-Fusion (IMU + Kamera)
+
+2. Testen weiterer Modelle
+
+::::
+
+:::: {.column width="50%"}
+![Autonomes Fahren](./images/Autonomes-Fahren.webp){width="75%"}
+
+![Autonomer Industrieroboter](./images/intustrieroboter.webp){width="75%"}
+
+::::
+:::
+
+
+
+
 
 
 
