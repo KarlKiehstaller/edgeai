@@ -21,13 +21,8 @@ $folHlink: #595959;
 $footer-bg: $lt2;
 $link-color: $tha-red;
 $presentation-title-slide-text-align: left;
-$presentation-h2-font-size: 1.6em;
-$presentation-h3-font-size: 1.6em;
-$presentation-h4-font-size: 1.6em;
 
 section.level1, section.level2, section.level3, section.level4 {
-    top: 5.1% !important;
-    left: 4.2% !important;
     height: 100%;
 }
 
@@ -37,7 +32,19 @@ section.level1, section.level2, section.level3, section.level4 {
 
 em {
     color: $tha-red !important;
+    font-style: normal !important;
  }
+
+ #title-slide .title {
+    color: #ff0350 !important;
+    font-weight: bold;    
+}
+
+#title-slide .subtitle {
+    color: #ff0350 !important;
+    font-weight: bold;    
+    font-size: 40pt;
+}
 
 #title-slide .title {
 color: $tha-red !important;
@@ -51,24 +58,39 @@ color: $tha-red !important;
 color: $tha-red !important; 
 }
 
+#title-slide .div .footer {
+    color: #ff0350 !important; 
+}
+
+
+.reveal .slide-number > a[href*='title-slide'] {
+    display: none;
+}
+
+.reveal .fragment.highlight-red.visible {
+    color: $tha-red !important;
+}
+    
+
 .reveal .footer {
     color: $tha-red !important;
-    font-size: 8.5pt;
-    bottom: 4.8% !important;
-    left: 17% !important;
-    width: 77% !important;
+    font-size: 10pt;
+    // bottom: 4.8% !important;
+    bottom: 1% !important;
+    left: 25% !important;
+    width: 69% !important;
     text-align: left !important;   
     
 }
 
 .reveal .slide-number {
     color: $tha-red !important;
-    font-size: 17pt !important;
+    font-size: 14pt !important;
     top: auto !important;
-    bottom: 4.4% !important;
+    // bottom: 4.4% !important;
+    bottom: 0.8% !important;
     right: 4.2% !important;
 }
-
 
 h1, h2, h3, h4 {
     color: $tha-red !important;
@@ -86,44 +108,68 @@ h1, h2, h3, h4 {
 }
 
 .reveal ul ul {
-    list-style-type: "- "  !important;
+    list-style-type: "• " !important; /* Sets empty bullet for second-level lists */
     padding-inline-start: 1ch;
     list-style-image: none;
 }
 
 .reveal .slide-logo {
-    bottom: 3% !important;
-    left: 3.7% !important;
-    max-height: 7% !important;
+    // bottom: 3% !important;
+    // left: 3.7% !important;
+    bottom: 0% !important;
+    left: 8% !important;
+    max-height: 5% !important;
   }
   
+
   
-  .reveal .slide .footer {
+.reveal .slide .footer {
     display: none;
   }
-
+  
 .caption {
     text-align: center;
+}
+
+.reveal .slides section{
+    width: 95%;
+}
+
+.reveal div.sourceCode{
+    width: 100%;
+    height: 94% !important;
+}
+
+.reveal pre.numberSource{
+    height: 98% !important;
 }
 
 .reveal .slides section .fragment.highlight-red.visible{
     font-weight: bold !important;
     color: $tha-red  !important;
-  }
+}
   
-  .reveal .slides section .fragment.highlight-blue.visible{
+.reveal .slides section .fragment.highlight-blue.visible{
     font-weight: bold  !important;
     color: $tha-blue  !important;
-  }
+}
   
 
 .reveal.smaller .callout.callout-style-default div.callout-body {
     font-size: 20px !important;
 }
 
+.reveal.smaller .callout.callout-style-default {
+    width: 100%;
+}
+
+.reveal.smaller .sourceCode {
+    font-size: 18px !important;
+}
+
 
 .reveal.smaller {
-    font-size: 30px !important;
+    font-size: 32px !important;
 }
 
 
@@ -146,6 +192,15 @@ h1, h2, h3, h4 {
     src: local(""),
          url(/font/TWKEverett-Regular.otf) format('opentype');
 }
+
+@font-face {
+    font-family: 'TWK Everett';
+    font-style: normal;
+    font-weight: 700;
+    src: local(""),
+         url(/font/TWKEverett-Bold.otf) format('opentype');
+}
+
 
 
   

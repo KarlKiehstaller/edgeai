@@ -6,8 +6,8 @@ date-format: DD.MM.YYYY
 bibliography: references.bib
 csl: nature.csl
 title-slide-attributes:
-    data-background-image: media/titelfolie.jpeg
-    data-background-size: auto
+    data-background-image: media/titelslide1.jpeg
+    data-background-size: stretch
 format:
   revealjs: 
     theme: [default, tha.scss]
@@ -15,9 +15,11 @@ format:
     footer: "{{< meta title >}} - {{< meta author >}}  <span style='float: right; '>{{< meta date >}}  &#160;  |  &#160; &#160; &#160; </span>"
     smaller: true
     # scrollable: true
-    incremental: true
+    # incremental: true
     slide-number: c
     slide-level: 4
+    toc: true
+    toc-title: Inhalt
 
     menu: true
     chalkboard: 
