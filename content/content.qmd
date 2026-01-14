@@ -55,11 +55,13 @@
 # Neural Processing Unit
 
 
-![](./images/npu.png){fig-align="center heigth: 35%"}
+
+![Cloud AI](./images/npu.png){fig-align="center" width="40%" height="30%" style="margin-right: 50px; margin-left: 20px"}
+![Cloud AI](./images/npuvscpuklein.png){fig-align="left" width="50%" height="30%" style="margin-top: 100px"}
 
 
 
-# Aufbaue der Software
+# Aufbau der Software
 
 
 ![](./images/diagramm.svg){fig-align="left" width="80%" }
