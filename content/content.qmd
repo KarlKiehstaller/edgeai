@@ -53,7 +53,7 @@
 
 # Software
 
-![](./images/diagramm.svg){fig-align="left" width="80%" }
+![](./images/softwarediagramm1.svg){fig-align="left" width="80%" }
 
 <!-- Diagram unverständlich -->
 
