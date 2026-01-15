@@ -122,40 +122,53 @@
 
 :::
 
-### Dronet V3 Quantisierung
+## Dronet V3 Quantisierung
 
 ![ST Edge AI Developer Cloud](./images/edge_ai_software.png)
 
 ### Dronet V3 Quantisierung {.unnumbered .unlisted}
 
 <!-- Folie überarbeiten! -->
+Die Quantisierungs-Pipeline des Dronet-V3 Netzes lief wie folgt ab:
 
+```{mermaid fig-align="center"}
+%%{init: {
+  'theme': 'base', 'themeVariables': { 'fontSize': '24px'}}}%%
+flowchart LR
+  A["Vortrainiertes Modell <br/>in .tflite umwandeln"] --> 
+  B["Ein-/Ausgabe-<br/>Architektur anpassen <br/>(inkompatible Ope- <br/>ratoren modifizieren)"] --> 
+  C["Post-Training-<br/>Quantization (PTQ) <br/>mit LiteRT"] --> 
+  D["Validierung &      <br/>Analyse mit      STM <br/> X-Cube-AI    "]
+
+  %% Styling
+  classDef redNode fill:#ff0350,color:#ffffff,stroke:#ff0350,stroke-width:2px,rx:30,ry:30;
+  class A,B,C,D redNode;
+
+  %% Graue Pfeile
+  linkStyle default stroke:#b4b4b4,stroke-width:5px;
+```
 
 :::{.columns}
 
 :::: {.column width="50%"}
-- Bei inkompatiblen Modellarchitekturen sind eigene Anpassungen nötig, in etwa durch das Ersetzen oder Umstrukturieren verschiedener Layer oder Operationen.
-
-- Auch bei Dronet V3 war dies nötig.
+![](./images/tensorflow-lite-logo-social.webp){width="40%" fig-align="center"}
 ::::
-
 :::: {.column width="50%"}
-**Umsetzung**:
-
-- Umwandlung des vortrainierten Modells in das .tflite-Format.
-
-- Manuelle Anpassung der Eingabe/Ausgabe-Architektur, da diese standardmäßig inkompatible Operatoren beinhalteten.
-
-- Post-Training-Quantization (PTQ) des angepassten Modells mit der LiteRT-Bibliothek.
-
-- Validierung und Analyse des quantisierten Modells mit der STM X-Cube-AI Toolchain.
+![](./images/x_cube_ai.png){width="40%" fig-align="center"}
 ::::
+:::
 
+
+::: {.callout-important .fragment}
+
+## Wichtig
+
+Viele vortrainierte Netze wurden für GPU/CPU-Inferenz entworfen und verwenden Operatoren, die auf der NPU nicht nativ unterstützt werden. In diesen Fällen sind manuelle Anpassungen an der Modellarchitektur nötig, z. B. durch Ersetzen oder Umstrukturieren von Layern bzw. Operationen.
 :::
 
 # Implementierung
 
-![](./images/ablauf.png){fig-align="center"}
+![](./images/ablauf.png){fig-align="center" width="80%"}
 
 ::: {.callout-important .fragment}
 ## Herausforderungen
